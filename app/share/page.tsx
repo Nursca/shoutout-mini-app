@@ -14,11 +14,11 @@ export default function SharePage() {
   const [embedUrl, setEmbedUrl] = useState<string | undefined>(undefined)
   const [isComposing, setIsComposing] = useState(false)
 
-  // return (
-  //   <Suspense fallback={<div>Loading...</div>}>
-  //     <ShareModal isOpen={true} onClose={() => {}} shoutout={shoutout} />
-  //   </Suspense>
-  // );
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ShareModal />
+    </Suspense>
+  );
 
   useEffect(() => {
     const t = params.get("text") || ""

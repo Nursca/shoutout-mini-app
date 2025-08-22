@@ -1,8 +1,10 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useSearchParams } from 'next/navigation'
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import { postCastWithEmbed } from "@/lib/farcasterApi"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -17,9 +19,18 @@ interface ShareModalProps {
 }
 
 export function ShareModal({ isOpen, onClose, shoutout }: ShareModalProps) {
-  const searchParams = useSearchParams();
+  const searchParams = useSearchParams()
+  const [text, setText] = useState("")
+  const [embedUrl, setEmbedUrl] = useState<string | undefined>(undefined)
   const [copied, setCopied] = useState(false)
   const [isDownloading, setIsDownloading] = useState(false)
+
+  useEffect(() => {
+    const t = searchParams.get("text") || ""
+    const e = searchParams.get("embedUrl") || undefined
+    setText(t)
+    setEmbedUrl(e)
+  }, [searchParams])
 
   const shareUrl = `${typeof window !== "undefined" ? window.location.origin : ""}/shoutout/${shoutout.id}`
   const shareText = `Check out this shoutout from @${shoutout.sender.username} to @${shoutout.recipient.username}! ${shoutout.customMessage || shoutout.category.label}`

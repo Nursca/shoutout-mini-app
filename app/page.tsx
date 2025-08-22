@@ -120,8 +120,8 @@ function MiniApp() {
 
             <Card className="text-center border-2 hover:border-primary/20 transition-colors">
               <CardHeader>
-                <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Heart className="w-6 h-6 text-secondary" />
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Heart className="w-6 h-6 text-primary" />
                 </div>
                 <CardTitle className="font-serif">Send</CardTitle>
                 <CardDescription>Share your shoutout with crypto tips via Base Pay to celebrate others</CardDescription>
@@ -130,8 +130,8 @@ function MiniApp() {
 
             <Card className="text-center border-2 hover:border-primary/20 transition-colors">
               <CardHeader>
-                <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <TrendingUp className="w-6 h-6 text-accent" />
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <TrendingUp className="w-6 h-6 text-primary" />
                 </div>
                 <CardTitle className="font-serif">Share</CardTitle>
                 <CardDescription>
