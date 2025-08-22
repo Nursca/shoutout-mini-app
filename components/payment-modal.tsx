@@ -8,6 +8,8 @@ import { Badge } from "@/components/ui/badge"
 import { Loader2, CheckCircle, XCircle, ExternalLink, AlertTriangle } from "lucide-react"
 import { useShoutoutPayment } from "@/hooks/useShoutoutPayment"
 import { resolveVerifiedEthAddressByUsername } from "@/lib/farcasterApi"
+import { adapter } from "next/dist/server/web/adapter"
+import sdk from '@farcaster/frame-sdk';
 
 interface PaymentModalProps {
   isOpen: boolean
@@ -25,6 +27,7 @@ export function PaymentModal({ isOpen, onClose, amount, recipient, onSuccess, on
   const [currentTxId, setCurrentTxId] = useState<string | null>(null)
   const [txStatus, setTxStatus] = useState<"idle" | "estimating" | "confirming" | "confirmed" | "failed">("idle")
   const [error, setError] = useState<string | null>(null)
+  const walletProvider = sdk.wallet.getEthereumProvider();
 
   // Estimate network fees when modal opens (simple static for demo)
   useEffect(() => {

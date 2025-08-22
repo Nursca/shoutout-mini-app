@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { useSearchParams } from 'next/navigation'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { useWallet } from "@solana/wallet-adapter-react";
 import { Button } from "@/components/ui/button"
 import { postCastWithEmbed } from "@/lib/farcasterApi"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
@@ -11,11 +12,39 @@ import { Label } from "@/components/ui/label"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Copy, Check, Share2, Download, MessageCircle, Twitter, Facebook, Linkedin } from "lucide-react"
 import type { ShoutoutData } from "./shoutout-card"
+import sdk from '@farcaster/frame-sdk';
 
 interface ShareModalProps {
   isOpen: boolean
   onClose: () => void
   shoutout: ShoutoutData
+}
+
+function WalletConnect() {
+  const { publicKey, connect, disconnect, connected } = useWallet();
+  const walletProvider = sdk.wallet.getEthereumProvider();
+  
+  const handleConnect = async () => {
+    try {
+      await connect();
+    } catch (error) {
+      console.error('Failed to connect wallet:', error);
+    }
+  };
+
+  return (
+    <div>
+      {connected ? (
+        <button onClick={() => disconnect()}>
+          Disconnect {publicKey?.toBase58().slice(0, 4)}...
+        </button>
+      ) : (
+        <button onClick={handleConnect}>
+          Connect Farcaster Wallet
+        </button>
+      )}
+    </div>
+  );
 }
 
 export function ShareModal({ isOpen, onClose, shoutout }: ShareModalProps) {

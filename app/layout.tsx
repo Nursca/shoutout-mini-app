@@ -46,11 +46,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfair.variable} ${sourceSans.variable} antialiased`}>
       <body className="font-sans">
-        <Providers>
-          <AuthProvider>
-            <PaymentProvider>{children}</PaymentProvider>
-          </AuthProvider>
-        </Providers>
+          <Providers>
+            <AuthProvider>
+              <PaymentProvider>{children}</PaymentProvider>
+            </AuthProvider>
+          </Providers>
       </body>
     </html>
   )

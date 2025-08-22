@@ -6,9 +6,12 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ExternalLink, Clock, CheckCircle, XCircle } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { adapter } from "next/dist/server/web/adapter"
+import sdk from '@farcaster/frame-sdk';
 
 export function TransactionHistory() {
   const { transactions } = usePayment()
+  const walletProvider = sdk.wallet.getEthereumProvider();
 
   if (transactions.length === 0) {
     return (

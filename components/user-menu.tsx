@@ -13,9 +13,11 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { User, Settings, LogOut, Wallet } from "lucide-react"
 import Link from "next/link"
+import sdk from '@farcaster/frame-sdk';
 
 export function UserMenu() {
   const { user, disconnectWallet } = useAuth()
+  const walletProvider = sdk.wallet.getEthereumProvider();
 
   if (!user) {
     return (

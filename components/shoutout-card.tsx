@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Heart, Share, Download, Plus } from "lucide-react"
 import { cn } from "@/lib/utils"
+import sdk from '@farcaster/frame-sdk';
 
 export interface ShoutoutData {
   id?: string
@@ -67,6 +68,8 @@ export function ShoutoutCard({
     portrait: "aspect-[3/4]",
     landscape: "aspect-[4/3]",
   }
+
+  const walletProvider = sdk.wallet.getEthereumProvider();
 
   const handleShare = (e: React.MouseEvent) => {
     e.preventDefault()
