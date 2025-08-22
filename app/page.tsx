@@ -61,6 +61,9 @@ function MiniApp() {
               </div>
               <h1 className="text-2xl font-serif font-bold text-foreground">Shoutout</h1>
             </div>
+            <div className="flex items-center gap-2">
+              <UserMenu />
+            </div>
           </div>
         </div>
       </header>
@@ -68,23 +71,23 @@ function MiniApp() {
       {/* Hero Section */}
       <section className="py-16 px-4">
         <div className="container mx-auto text-center max-w-4xl">
-          <h2 className="text-4xl md:text-6xl font-serif font-bold text-foreground mb-6">
+          <h2 className="text-4xl md:text-6xl text-white font-serif font-bold mb-6">
             Celebrate Others with
-            <span className="text-primary block">Crypto Tips</span>
+            <span className="text-white block">Crypto Tips</span>
           </h2>
-          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
             Send onchain shoutouts to recognize achievements, spread positivity, and build
             stronger communities.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/create">
-              <Button size="lg" className="gap-2 text-lg px-8 py-6">
+              <Button variant="outline" size="lg" className="gap-2 text-lg text-stone-200 bg-transparent px-8 py-6">
                 <Plus className="w-5 h-5" />
                 Send Your First Shoutout
               </Button>
             </Link>
             <Link href="/discover">
-              <Button variant="outline" size="lg" className="text-lg px-8 py-6 bg-transparent">
+              <Button variant="outline" size="lg" className="text-lg px-8 py-6 text-stone-200 bg-transparent">
                 Explore Community
               </Button>
             </Link>
@@ -135,7 +138,7 @@ function MiniApp() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 px-4">
+      <section className="py-16 px-4 bg-amber-950">
         <div className="container mx-auto max-w-4xl">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
@@ -167,7 +170,7 @@ function MiniApp() {
             </div>
             <span className="font-serif font-bold text-lg">Shoutout</span>
           </div>
-          <p className="text-muted-foreground">Spreading positivity, one shoutout at a time.</p>
+          <p className="text-black">Spreading positivity, one shoutout at a time.</p>
         </div>
       </footer>
     </div>
