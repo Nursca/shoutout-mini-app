@@ -25,7 +25,17 @@ const sourceSans = Source_Sans_3({
 export const metadata: Metadata = {
   title: "Shoutout - Social Tipping App",
   description: "Send personalized shoutouts with crypto tips to celebrate achievements and spread positivity",
-  generator: "v0.app",
+  openGraph: {
+    title: "Shoutout - Social Tipping App",
+    description: "Send personalized shoutouts with crypto tips to celebrate achievements and spread positivity",
+    images: ["https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/app-icon-1024-7qjTfFPxSXtMV4kkMcv8ODV7eoCteP.png"],
+  },
+  other: {
+    "fc:frame": "vNext",
+    "fc:frame:image": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/app-icon-1024-7qjTfFPxSXtMV4kkMcv8ODV7eoCteP.png",
+    "fc:frame:button:1": "Open Shoutout",
+    "fc:frame:post_url": "https://shoutout-mini-app.vercel.app/",
+  },
 }
 
 export default function RootLayout({
