@@ -16,7 +16,23 @@ export default function SharePage() {
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <ShareModal />
+      <ShareModal isOpen={true} 
+        onClose={() => {}} 
+        shoutout={
+          {
+          id: "123",
+          sender: {
+            username: "Unknown",
+          },
+          recipient: {
+            username: 'Unknown',
+          },
+          customMessage: '',
+          category: { id: "123", label: "Shared Cast", emoji: "🔗" },
+          theme: { id: "123", emojis: ["🌞"] },
+          background: { id: "123", class: "white", name: "White" }
+        }} 
+      />
     </Suspense>
   );
 
