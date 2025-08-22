@@ -61,15 +61,6 @@ function MiniApp() {
               </div>
               <h1 className="text-2xl font-serif font-bold text-foreground">Shoutout</h1>
             </div>
-            <div className="flex items-center gap-2">
-              <Link href="/create">
-                <Button size="sm" className="gap-2">
-                  <Plus className="w-4 h-4" />
-                  Create Shoutout
-                </Button>
-              </Link>
-              <UserMenu />
-            </div>
           </div>
         </div>
       </header>
