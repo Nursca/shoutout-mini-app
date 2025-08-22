@@ -4,7 +4,9 @@
     "name": "Shoutout",
     "description": "Send onchain shoutouts with crypto tips to celebrate achievements",
     "icon": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/app-icon-1024-7qjTfFPxSXtMV4kkMcv8ODV7eoCteP.png",
+    "iconUrl": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/app-icon-1024-7qjTfFPxSXtMV4kkMcv8ODV7eoCteP.png",
     "url": "https://shoutout-mini-app-4686.vercel.app/",
+    "homeUrl": "https://shoutout-mini-app-4686.vercel.app/",
     "castShareUrl": "https://shoutout-mini-app.vercel.app/share",
     "splashBackgroundColor": "#0a0a0a",
     "frame": {
