@@ -13,7 +13,8 @@ const nextConfig: NextConfig = {
   webpack: (config) => {
     config.resolve.fallback = {
       ...config.resolve.fallback,
-      fs: false,
+      "pino-pretty": false,
+      "fs": false,
     };
     return config;
   },

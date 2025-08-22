@@ -25,6 +25,26 @@ export function ShareModal({ isOpen, onClose, shoutout }: ShareModalProps) {
   const [copied, setCopied] = useState(false)
   const [isDownloading, setIsDownloading] = useState(false)
 
+  return (
+    <ShareModal isOpen={true} 
+      onClose={() => {}} 
+      shoutout={
+        {
+        id: "123",
+        sender: {
+          username: "Unknown",
+        },
+        recipient: {
+          username: 'Unknown',
+        },
+        customMessage: '',
+        category: { id: "123", label: "Shared Cast", emoji: "🔗" },
+        theme: { id: "123", emojis: ["🌞"] },
+        background: { id: "123", class: "white", name: "White" }
+      }} 
+    />
+  );
+
   useEffect(() => {
     const t = searchParams.get("text") || ""
     const e = searchParams.get("embedUrl") || undefined

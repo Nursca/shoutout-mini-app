@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button"
 import { postCastWithEmbed } from "@/lib/farcasterApi"
 
 export default function SharePage() {
-  const params = useSearchParams()
+  // const params = useSearchParams()
   const [text, setText] = useState("")
   const [embedUrl, setEmbedUrl] = useState<string | undefined>(undefined)
   const [isComposing, setIsComposing] = useState(false)
@@ -36,12 +36,7 @@ export default function SharePage() {
     </Suspense>
   );
 
-  useEffect(() => {
-    const t = params.get("text") || ""
-    const e = params.get("embedUrl") || undefined
-    setText(t)
-    setEmbedUrl(e)
-  }, [params])
+  
 
   const handleCompose = async () => {
     setIsComposing(true)
