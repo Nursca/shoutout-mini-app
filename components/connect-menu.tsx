@@ -1,3 +1,4 @@
+"use client"
 import { useAccount, useConnect } from 'wagmi'
 
 export function ConnectMenu() {
