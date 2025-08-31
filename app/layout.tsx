@@ -5,6 +5,7 @@ import { AuthProvider } from "@/contexts/auth-context"
 import { PaymentProvider } from "@/contexts/payment-context"
 import { Providers } from "./providers"
 import "./globals.css"
+import { ConnectMenu } from "@/components/connect-menu"
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -48,6 +49,7 @@ export default function RootLayout({
       <body className="font-sans">
           <Providers>
             <AuthProvider>
+              <ConnectMenu />
               <PaymentProvider>{children}</PaymentProvider>
             </AuthProvider>
           </Providers>
